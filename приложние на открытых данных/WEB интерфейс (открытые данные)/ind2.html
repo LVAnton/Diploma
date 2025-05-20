@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> form </title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<form id="courseForm" onsubmit="submitForm(event)">
+		<h3> Выберите направление курса </h3>
+		<div class="course-selector">
+			<input type="hidden" id="selected_course" name="course_name" value="Programming">
+			<div class="card">
+				<img src="img/Programming.jpg" alt="Программирование" data-course="Programming" onclick="selectCourse(this)"
+					class="course-image selected">
+				<p>Programming</p>
+			</div>
+			<div class="card">
+				<img src="img/business.jpg" alt="Бизнес" data-course="Business" onclick="selectCourse(this)"
+					class="course-image">
+				<p>Business</p>
+			</div>
+			<div class="card">
+				<img src="img/Science.jpg" alt="Наука" data-course="Science" onclick="selectCourse(this)"
+					class="course-image">
+				<p>Science</p>
+			</div>
+			<div class="card">
+				<img src="img/Arts.jpg" alt="Творчество" data-course="Art" onclick="selectCourse(this)"
+					class="course-image">
+				<p>Arts</p>
+			</div>
+			<div class="card">
+				<img src="img/Hearth.jpg" alt="Здоровье" data-course="Health" onclick="selectCourse(this)"
+					class="course-image">
+				<p>Health</p>
+			</div>
+		</div>
+		<div class="lines">
+			<!-- потрачено времени -->
+			<div class="slider-container">
+				<label for="hours_spent">Время, потраченное на курс: <span id="hours_spent_value">1</span> часов</label>
+				<div class="line">
+					<p>1</p>
+					<input type="range" id="hours_spent" name="hours_spent" min="1" max="100" step="0.1" value="1"
+						oninput="updateValue('hours_spent', this.value)">
+					<p>100</p>
+				</div>
+			</div>
+
+			<!-- Просмотрено видео -->
+			<div class="slider-container">
+				<label for="videos_watched">Просмотрено видео: <span id="videos_watched_value">0</span></label>
+				<div class="line">
+					<p>0</p>
+					<input type="range" id="videos_watched" name="videos_watched" min="0" max="20" value="0"
+						oninput="updateValue('videos_watched', this.value)">
+					<p>20</p>
+				</div>
+			</div>
+
+			<!-- Прорешано тестов -->
+			<div class="slider-container">
+				<label for="tests_completed">Прорешано тестов: <span id="tests_completed_value">0</span></label>
+				<div class="line">
+					<p> 0 </p>
+					<input type="range" id="tests_completed" name="tests_completed" min="0" max="10" value="0"
+						oninput="updateValue('tests_completed', this.value)">
+					<p> 10 </p>
+				</div>
+			</div>
+
+			<!-- Средний балл за тесты -->
+			<div class="slider-container">
+				<label for="average_score">Средний балл за тесты: <span id="average_score_value">50</span></label>
+				<div class="line">
+					<p> 50</p>
+					<input type="range" id="average_score" name="average_score" min="50" max="100" step="0.1" value="50"
+						oninput="updateValue('average_score', this.value)">
+					<p> 100</p>
+				</div>
+			</div>
+
+			<!-- Процент выполнения -->
+			<div class="slider-container">
+				<label for="completion_percentage">Процент выполнения курса: <span
+						id="completion_percentage_value">0</span></label>
+				<div class="line">
+					<p> 0 </p>
+					<input type="range" id="completion_percentage" name="completion_percentage" min="0" max="100" step="0.1"
+						value="0" oninput="updateValue('completion_percentage', this.value)">
+					<p> 100 </p>
+				</div>
+			</div>
+		</div>
+
+		<h3> Выберите устройство </h3>
+		<div class="device-type-selector">
+			<input type="hidden" id="selected_device" name="device_type" value="computer">
+			<div class="card">
+				<img src="img/Desktop.jpg" alt="Компьютер" data-device="computer" onclick="selectDevice(this)"
+					class="device-image selected">
+				<p>Computer</p>
+			</div>
+			<div class="card">
+				<img src="img/Mobile.jpg" alt="Телефон" data-device="phone" onclick="selectDevice(this)"
+					class="device-image">
+				<p>Phone</p>
+			</div>
+		</div>
+
+		<div>
+			<button type="submit" class="calculate-button">Рассчитать шанс сдачи курса</button>
+		</div>
+		<h3 id="probabilityResult">Вероятность: неизвестна</h3>
+	</form>
+	<script src="script.js"></script>
+</body>
+
+</html>

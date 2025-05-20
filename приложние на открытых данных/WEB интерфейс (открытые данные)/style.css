@@ -1,0 +1,97 @@
+.course-selector {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.course-image {
+	width: 90px;
+	height: 90px;
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+
+.course-image.selected {
+	border: 2px solid blue;
+}
+
+.device-type-selector {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.device-image {
+	width: 90px;
+	height: 90px;
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+
+.device-image.selected {
+	border: 2px solid blue;
+}
+
+.card{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*линии*/
+.slider-container {
+	width: 400px;
+	margin-bottom: 15px;
+}
+
+input[type="range"] {
+	width: 100%;
+}
+
+.line{
+	display: flex;
+}
+
+/* кнопь */
+.calculate-button {
+	/* Основные стили */
+	background-color: #b30000; /* Глубокий красный */
+	color: white; /* Белый текст */
+	font-weight: bold; /* Жирный текст */
+	padding: 12px 24px; /* Отступы внутри кнопки */
+	border: 2px solid #800000; /* Бордовая окантовка */
+	border-radius: 8px; /* Закругленные края */
+	cursor: pointer; /* Курсор "рука" при наведении */
+	font-size: 16px; /* Размер шрифта */
+	transition: background-color 0.3s ease, border-color 0.3s ease; /* Плавный переход цвета */
+
+	/* Убираем стандартные стили кнопки */
+	border: none;
+	outline: none;
+}
+
+ /* Стили при наведении */
+.calculate-button:hover {
+	background-color: #800000; /* Более темный красный при наведении */
+	border-color: #590000; /* Еще более темная окантовка при наведении */
+}
+
+ /* Стили при нажатии (активное состояние) */
+.calculate-button:active {
+	background-color: #590000; /* Самый темный красный при нажатии */
+	border-color: #330000; /* Самая темная окантовка при нажатии */
+}
+
+#courseForm{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.device-type-selector{
+	display: flex;
+	align-items: center;
+}
+.course-selector{
+	display: flex;
+	align-items: center;
+}
