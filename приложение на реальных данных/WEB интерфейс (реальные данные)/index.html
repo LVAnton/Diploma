@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CSV File Uploader</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Загрузите CSV файл</h1>
+
+		<label for="predictionType">Выберите тип предсказания</label>
+		<select id="predictionType">
+			<option value="first">Предсказать успеваемость к концу недели</option>
+			<option value="second">Предсказать отток учеников после недели</option>
+		</select>
+
+		<label for="csvFile">Выберите файл</label>
+		<input type="file" id="csvFile" accept=".csv">
+
+		<button onclick="uploadCSV()">Предсказать</button>
+		<button id="downloadButton" style="display: none;">Скачать результат</button>
+
+		<p id="status"></p>
+		<p id="count_away"></p>
+		<p id="all_people"></p>
+
+		<div id="loading" class="loading-indicator" style="display: none;">Загрузка</div>
+	</div>
+</body>
+<script src="script.js" defer></script>
+
+</html>
